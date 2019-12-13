@@ -10,7 +10,9 @@ public class Enemy : Player
   override
   public void Init() {
     base.Init();
-    source = "characters/caveman";
+    if (source == "") {
+      source = "characters/caveman";
+    }
     Stand();
   }
 
@@ -20,8 +22,7 @@ public class Enemy : Player
         direction = -1;
       } else {
         direction = 1;
-      }
-      
+      } 
     }
   }
 
@@ -51,9 +52,7 @@ public class Enemy : Player
 
     int sourceIndex = (int)((Random.Range(0.0f, 1.0f) * 100)) % (enemies.Length);
     source = enemies[sourceIndex];
-    // Random.Range(0,0.)
-
-    // LoadResources();
+    LoadResources();
   }
 
   override

@@ -21,6 +21,7 @@ public class GameLoop : MonoBehaviour,
   Player player;
   EndlessRooms endless;
   GameObject touchBackground;
+
   // Start is called before the first frame update
   void Start() {
 
@@ -32,7 +33,6 @@ public class GameLoop : MonoBehaviour,
     hiScoreText.text = "";
     
     touchBackground = GameObject.Find("TouchBackground");
-    Debug.Log(touchBackground);
     player = GetComponentInChildren<Player> ();
     endless = GetComponentInChildren<EndlessRooms> ();
 
@@ -67,19 +67,17 @@ public class GameLoop : MonoBehaviour,
 
   public void StartGame() {
     endless.Init();
-
+    
     score = 0;
     tryAgain.SetActive(false);
 
     // position the player
     Room room = endless.rooms[0];
     player.Reset();
-    player.transform.position = room.GetTileWorldPosition(room.playerPosition.x, room.playerPosition.y+1) + new Vector3(0,0.15f,0);
+    player.transform.position = room.GetTileWorldPosition(room.playerPosition.x, room.playerPosition.y) + new Vector3(0,0.15f,0);
 
     // reposition camera
     GameObject.Find("Main Camera").GetComponent<FollowCamera>().FollowTarget(false);
-
-    FixedUpdate();
   }
 
   public void OnPointerDown (PointerEventData eventData) {

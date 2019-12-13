@@ -142,7 +142,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3456025255917221584}
   - component: {fileID: 3456025255917221586}
-  - component: {fileID: 3456025255917221587}
+  - component: {fileID: 353994809434027574}
   m_Layer: 0
   m_Name: Room
   m_TagString: Untagged
@@ -177,7 +177,7 @@ Grid:
   m_CellGap: {x: -0.35, y: -0.35, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
---- !u!114 &3456025255917221587
+--- !u!114 &353994809434027574
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

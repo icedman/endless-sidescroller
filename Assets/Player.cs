@@ -17,7 +17,7 @@ public class Player : Character {
   override
   public void Init() {
     base.Init();
-    source = "characters/player";
+    // source = "characters/player";
 
     PhysicsMaterial2D mat = new PhysicsMaterial2D();
     mat.friction = 0.1f;

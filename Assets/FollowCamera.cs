@@ -38,6 +38,7 @@ public class FollowCamera : MonoBehaviour {
     Vector3 delta = player.transform.position - targetCamera.ViewportToWorldPoint (new Vector3 (0.5f, 0.5f, point.z)); //(new Vector3(0.5, 0.5, point.z));
     Vector3 destination = transform.position + delta;
 
+    // add some look ahead
     destination += new Vector3((Screen.width * 0.001f), 0, 0);
 
     destination.z = -24;

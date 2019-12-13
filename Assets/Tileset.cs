@@ -229,7 +229,7 @@ public class Tileset {
   }
 
   int[][] getItemRects() {
-    int[][] items = new int[173][];
+    int[][] items = new int[(int)ObjType.last][];
     items[(int)ObjType.unknown] = new int [] {0, 0, 1, 1};
     items[(int)ObjType.box] = new int [] {0, 864, 70, 70};
     items[(int)ObjType.boxAlt] = new int [] {0, 792, 70, 70};

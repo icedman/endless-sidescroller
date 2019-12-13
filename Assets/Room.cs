@@ -16,7 +16,7 @@ public class Room : MonoBehaviour {
   }
 
   public Vector3 GetTileWorldPosition(int x, int y) {
-    Vector3Int localPlace = (new Vector3Int(x, y, (int)tileMap.transform.position.y));
+    Vector3Int localPlace = (new Vector3Int(x, y + 1, (int)tileMap.transform.position.y));
     return tileMap.CellToWorld(localPlace);
   }
 
@@ -58,7 +58,7 @@ public class Room : MonoBehaviour {
           break;
         }
         case 'E': {
-          GameObject nme = Instantiate(enemyPrefab, GetTileWorldPosition(x, y+1) + new Vector3(0,0.15f,0), Quaternion.identity);
+          GameObject nme = Instantiate(enemyPrefab, GetTileWorldPosition(x, y) + new Vector3(0,0.15f,0), Quaternion.identity);
           nme.transform.SetParent(transform);
           nme.GetComponent<Enemy>().Randomize();
           break;

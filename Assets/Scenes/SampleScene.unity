@@ -96,7 +96,6 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
-    m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -179,6 +178,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8204097}
     m_Modifications:
+    - target: {fileID: 3456025255917221585, guid: 9977064e57765f0a28704d068cd42bfe,
+        type: 3}
+      propertyPath: m_Name
+      value: Room
+      objectReference: {fileID: 0}
     - target: {fileID: 3456025255917221584, guid: 9977064e57765f0a28704d068cd42bfe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -233,11 +237,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3456025255917221585, guid: 9977064e57765f0a28704d068cd42bfe,
-        type: 3}
-      propertyPath: m_Name
-      value: Room
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9977064e57765f0a28704d068cd42bfe, type: 3}
@@ -302,7 +301,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3
+  orthographic size: 2.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -362,6 +361,28 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_MaxRayIntersections: 0
+--- !u!1 &609636480 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3456025255917221585, guid: 9977064e57765f0a28704d068cd42bfe,
+    type: 3}
+  m_PrefabInstance: {fileID: 974372277}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &609636481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 609636480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4130619c0cd62e5a5983b9bed2a95821, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 0
+  tileMap: {fileID: 0}
+  playerPosition: {x: 0, y: 0}
+  enemyPrefab: {fileID: 0}
 --- !u!1 &671143664
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,7 +429,6 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -637,6 +657,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8204097}
     m_Modifications:
+    - target: {fileID: 3456025255917221585, guid: 9977064e57765f0a28704d068cd42bfe,
+        type: 3}
+      propertyPath: m_Name
+      value: Room
+      objectReference: {fileID: 0}
     - target: {fileID: 3456025255917221584, guid: 9977064e57765f0a28704d068cd42bfe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -691,11 +716,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3456025255917221585, guid: 9977064e57765f0a28704d068cd42bfe,
-        type: 3}
-      propertyPath: m_Name
-      value: Room
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9977064e57765f0a28704d068cd42bfe, type: 3}
@@ -860,6 +880,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character
       objectReference: {fileID: 0}
+    - target: {fileID: 5993128285208269536, guid: 26d32154222c81fa0af50b81f6fde7c3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5993128285208269538, guid: 26d32154222c81fa0af50b81f6fde7c3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -914,6 +939,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5993128285208269539, guid: 26d32154222c81fa0af50b81f6fde7c3,
+        type: 3}
+      propertyPath: source
+      value: characters/player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26d32154222c81fa0af50b81f6fde7c3, type: 3}
@@ -1183,6 +1213,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8204097}
     m_Modifications:
+    - target: {fileID: 3456025255917221585, guid: 9977064e57765f0a28704d068cd42bfe,
+        type: 3}
+      propertyPath: m_Name
+      value: Room
+      objectReference: {fileID: 0}
     - target: {fileID: 3456025255917221584, guid: 9977064e57765f0a28704d068cd42bfe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1238,11 +1273,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3456025255917221585, guid: 9977064e57765f0a28704d068cd42bfe,
-        type: 3}
-      propertyPath: m_Name
-      value: Room
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9977064e57765f0a28704d068cd42bfe, type: 3}
 --- !u!1001 &1941430758
@@ -1252,6 +1282,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8204097}
     m_Modifications:
+    - target: {fileID: 3456025255917221585, guid: 9977064e57765f0a28704d068cd42bfe,
+        type: 3}
+      propertyPath: m_Name
+      value: Room
+      objectReference: {fileID: 0}
     - target: {fileID: 3456025255917221584, guid: 9977064e57765f0a28704d068cd42bfe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1306,11 +1341,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3456025255917221585, guid: 9977064e57765f0a28704d068cd42bfe,
-        type: 3}
-      propertyPath: m_Name
-      value: Room
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9977064e57765f0a28704d068cd42bfe, type: 3}
