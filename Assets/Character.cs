@@ -18,7 +18,7 @@ public class Character : MonoBehaviour {
   public bool lockDirection = false;
   public int direction = 1;
 
-  float animIndex = 0;
+  protected float animIndex = 0;
 
   public virtual void Init() {}
   public virtual void Act() {}
@@ -52,7 +52,7 @@ public class Character : MonoBehaviour {
     // spr.sprite = spriteSources[index];
   }
 
-  void grounded() {
+  void Grounded() {
     Vector2 v = body.velocity;
     v.y = 0;
     body.velocity = v;
@@ -60,13 +60,13 @@ public class Character : MonoBehaviour {
 
   void OnTriggerEnter2D (Collider2D collider) {
     if (collider.tag == "Ground") {
-      grounded();
+      Grounded();
     }
   }
 
   void OnTriggerStay2D (Collider2D collider) {
     if (collider.tag == "Ground") {
-      grounded();
+      Grounded();
     }
   }
 
@@ -90,12 +90,13 @@ public class Character : MonoBehaviour {
     index = animationFrames[(int)animIndex];
     spr.sprite = spriteSources[index];
 
-    // flip image to direction
     if (!lockDirection && body.velocity.x < 0) {
       direction = -1;
     } else if (body.velocity.x > 0) {
       direction = 1;
     }
+
+    // flip image to direction
     Vector2 s = transform.localScale;
     s.x = direction;
     transform.localScale = s;

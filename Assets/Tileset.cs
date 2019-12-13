@@ -269,7 +269,6 @@ public class Tileset {
     items[(int)ObjType.castleLeft] = new int [] {792, 216, 70, 70};
     items[(int)ObjType.castleMid] = new int [] {792, 144, 70, 70};
     items[(int)ObjType.castleRight] = new int [] {792, 72, 70, 70};
-    /*
     items[(int)ObjType.dirt] = new int [] {792, 0, 70, 70};
     items[(int)ObjType.dirtCenter] = new int [] {720, 864, 70, 70};
     items[(int)ObjType.dirtCenter_rounded] = new int [] {720, 792, 70, 70};
@@ -404,7 +403,6 @@ public class Tileset {
     items[(int)ObjType.tochLit2] = new int [] {72, 144, 70, 70};
     items[(int)ObjType.torch] = new int [] {72, 72, 70, 70};
     items[(int)ObjType.window] = new int [] {72, 0, 70, 70};
-    */
     return items;
   }
 

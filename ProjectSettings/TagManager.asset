@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ground
   - Enemy
+  - Spikes
+  - Tilemap
   layers:
   - Default
   - TransparentFX

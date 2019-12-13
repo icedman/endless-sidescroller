@@ -100,6 +100,16 @@ public class Player : Character {
     SetAnimation(_die, 15, false);
   }
 
+  void OnCollisionEnter2D (Collision2D collision)
+  {
+    if (collision.gameObject.tag == "Enemy") {
+      Die();
+    }
+    if (collision.gameObject.tag == "Spikes") {
+      Die();
+    }
+  }
+
   override
   public void Act() {
     float dt = Time.deltaTime;

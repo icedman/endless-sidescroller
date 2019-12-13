@@ -1,7 +1,8 @@
 import re
 import xml.etree.ElementTree as ET 
 
-tree = ET.parse("tiles_spritesheet.xml") 
+# tree = ET.parse("tiles_spritesheet.xml") 
+tree = ET.parse("../items/items_spritesheet.xml") 
 root = tree.getroot() 
 
 items = [ 'unknown' ]

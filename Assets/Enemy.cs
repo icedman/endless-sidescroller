@@ -35,13 +35,6 @@ public class Enemy : Player
     }
   }
 
-  void OnCollisionEnter2D (Collision2D collision)
-  {
-    if (collision.gameObject.tag == "Player") {
-      player.Die();
-    }
-  }
-
   public void Randomize() {
     string[] enemies = new string[] {
       "characters/caveman",

@@ -25,45 +25,60 @@ public class Room : MonoBehaviour {
     // tileMap.ClearAllTiles ();
 
     foreach (Transform child in transform) {
-      if (child.gameObject.tag == "Enemy" ||
-        child.gameObject.tag == "Ground") {
-        GameObject.Destroy(child.gameObject);
+      if (child.gameObject.tag == "Tilemap") {
+        continue;
       }
+      GameObject.Destroy(child.gameObject);
     }
   }
 
-  void SetTile(int x, int y, Tile t) {
+  void SetTile(int x, int y, Tile t, string tag) {
     // tile collision doesn't work on android ! uggh
     // tileMap.SetTile(new Vector3Int(x,y,0), t);
 
     GameObject nme = new GameObject("tile");
     nme.layer = LayerMask.NameToLayer("GameLayer");
     nme.transform.SetParent(transform);
-    nme.transform.position = GetTileWorldPosition(x, y-1);
+    nme.transform.position = GetTileWorldPosition(x, y);
     SpriteRenderer spr = nme.AddComponent<SpriteRenderer> ();
     spr.sprite = t.sprite;
 
     BoxCollider2D bc = nme.AddComponent<BoxCollider2D> ();
-    bc.tag = "Ground";
+    bc.tag = tag;
+
+    if (tag == "Spikes") {
+      bc.offset = new Vector2(0.34f, 0.2f);
+      bc.size = new Vector2(0.63f, 0.3f);
+    }
   }
 
   public void Generate() {
     Tileset tileSet = Tileset.Instance();
+    Itemset itemSet = Itemset.Instance();
     RoomTemplates templates = RoomTemplates.Instance();
 
     CleanupUp();
 
-    // int floorTileIndex = (int)Tileset.ObjType.castleCenter_rounded;
-    int floorTileIndex = (int)Tileset.ObjType.box;
+    int[] groudTypes = new int[] {
+      (int)Tileset.ObjType.dirt,
+      (int)Tileset.ObjType.grass,
+      (int)Tileset.ObjType.castle,
+      (int)Tileset.ObjType.box
+    };
+
+    int floorTileIndex = groudTypes[(index/3)%groudTypes.Length];
 
     int templateIndex = 0;
     if (index != 0) {
       templateIndex = 1 + (int)((Random.Range(0.0f, 1.0f) * 100)) % (templates.templates.Count - 1);
     }
 
+    Debug.Log(index + " " + templateIndex);
+
     RoomTemplates.Template t = templates.GetRoom(templateIndex);
 
     Tile[] tileSources = tileSet.tileSources;
+    Tile[] itemSources = itemSet.tileSources;
 
     for (int y = 0; y < 12; y++) {
       string s = t.lines[11-y]; // inverted
@@ -71,8 +86,14 @@ public class Room : MonoBehaviour {
         char c = s[x];
         switch (c) {
         case '#': {
-          SetTile(x, y, tileSources[floorTileIndex]);
+          SetTile(x, y, tileSources[floorTileIndex], "Ground");
           break;
+        }
+        case 'I': {
+          // spike!
+          int itemIndex = (int)Itemset.ObjType.spikes;
+          SetTile(x, y, itemSources[itemIndex], "Spikes");
+          break; 
         }
         case 'E': {
           GameObject nme = Instantiate(enemyPrefab, GetTileWorldPosition(x, y) + new Vector3(0,0.15f,0), Quaternion.identity);

@@ -182,7 +182,7 @@ PrefabInstance:
     - target: {fileID: 3456025255128410840, guid: 9977064e57765f0a28704d068cd42bfe,
         type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Tilemap
       objectReference: {fileID: 0}
     - target: {fileID: 3456025255917221584, guid: 9977064e57765f0a28704d068cd42bfe,
         type: 3}
@@ -527,7 +527,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1451180863}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -648,7 +648,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Try Again?
+  m_Text: Play Again
 --- !u!222 &909323646
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -667,7 +667,7 @@ PrefabInstance:
     - target: {fileID: 3456025255128410840, guid: 9977064e57765f0a28704d068cd42bfe,
         type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Tilemap
       objectReference: {fileID: 0}
     - target: {fileID: 3456025255917221584, guid: 9977064e57765f0a28704d068cd42bfe,
         type: 3}
@@ -833,7 +833,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1451180863}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -1064,6 +1064,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 1789984323}
   - {fileID: 1329962763}
   - {fileID: 843563584}
   - {fileID: 1710765817}
@@ -1107,7 +1108,7 @@ RectTransform:
   m_Children:
   - {fileID: 909323644}
   m_Father: {fileID: 1451180863}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -1233,6 +1234,83 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd2d50effb3bb93699eab8554723a088, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1789984322
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1789984323}
+  - component: {fileID: 1789984325}
+  - component: {fileID: 1789984324}
+  m_Layer: 5
+  m_Name: TitleText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1789984323
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789984322}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1451180863}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 80, y: 0}
+  m_SizeDelta: {x: 600, y: 80}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1789984324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789984322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: ab89995f61a0d3a6d8bbb022757aff44, type: 3}
+    m_FontSize: 40
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 4
+    m_MaxSize: 40
+    m_Alignment: 2
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Some kind of Endless
+--- !u!222 &1789984325
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789984322}
+  m_CullTransparentMesh: 0
 --- !u!1001 &1793520378
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1243,7 +1321,7 @@ PrefabInstance:
     - target: {fileID: 3456025255128410840, guid: 9977064e57765f0a28704d068cd42bfe,
         type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Tilemap
       objectReference: {fileID: 0}
     - target: {fileID: 3456025255917221584, guid: 9977064e57765f0a28704d068cd42bfe,
         type: 3}

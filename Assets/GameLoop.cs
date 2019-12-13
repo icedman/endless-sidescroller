@@ -32,15 +32,17 @@ public class GameLoop : MonoBehaviour,
 
     scoreText.text = "";
     hiScoreText.text = "";
-    
+
     touchBackground = GameObject.Find("TouchBackground");
     player = GetComponentInChildren<Player> ();
     endless = GetComponentInChildren<EndlessRooms> ();
 
+    Itemset.Instance().LoadResources();
     Tileset.Instance().LoadResources();
     RoomTemplates.Instance().LoadResources();
 
-    // StartGame();
+    // hide player at the start
+    player.transform.position = new Vector3(-100,-100,0);
     tryAgain.SetActive(false);
   }
 
@@ -85,6 +87,7 @@ public class GameLoop : MonoBehaviour,
   public void OnPointerDown (PointerEventData eventData) {
     if (!firstStart) {
       firstStart = true;
+      GameObject.Find("TitleText").SetActive(false);
       StartGame();
       return;
     }
