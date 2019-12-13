@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class GameLoop : MonoBehaviour,
   IPointerDownHandler,
@@ -10,12 +11,26 @@ public class GameLoop : MonoBehaviour,
   IDragHandler,
   IEndDragHandler {
 
+  float score = 0;
+  float highScore = 0;
+
+  Text scoreText;
+  Text hiScoreText;
+  GameObject tryAgain;
+
   Player player;
   EndlessRooms endless;
   GameObject touchBackground;
   // Start is called before the first frame update
   void Start() {
 
+    tryAgain = GameObject.Find("TryAgain");
+    scoreText = GameObject.Find("ScoreText").GetComponent<Text>();
+    hiScoreText = GameObject.Find("HiScoreText").GetComponent<Text>();
+
+    scoreText.text = "";
+    hiScoreText.text = "";
+    
     touchBackground = GameObject.Find("TouchBackground");
     Debug.Log(touchBackground);
     player = GetComponentInChildren<Player> ();
@@ -29,20 +44,37 @@ public class GameLoop : MonoBehaviour,
 
   // Update is called once per frame
   void FixedUpdate() {
+    float dt = Time.deltaTime;
+
     Vector3 v = touchBackground.transform.position;
     v.x = player.transform.position.x;
     v.y = player.transform.position.y;
     touchBackground.transform.position = v;
+
+    if (player.speedX != 0) {
+      score += (dt * 10);
+      scoreText.text = "Score:" + (int)score;
+    }
+
+    if (player.isDead) {
+      if (score > highScore) {
+        highScore = score;
+        hiScoreText.text = "High:" + (int)highScore;
+      }
+      tryAgain.SetActive(true);
+    }
   }
 
-  void StartGame() {
+  public void StartGame() {
     endless.Init();
+
+    score = 0;
+    tryAgain.SetActive(false);
 
     // position the player
     Room room = endless.rooms[0];
-    Vector3Int localPlace = (new Vector3Int(room.playerPosition.x, room.playerPosition.y+1, (int)room.tileMap.transform.position.y));
-    Vector3 place = room.tileMap.CellToWorld(localPlace);
-    player.transform.position = place + new Vector3(0,0.15f,0);
+    player.Reset();
+    player.transform.position = room.GetTileWorldPosition(room.playerPosition.x, room.playerPosition.y+1) + new Vector3(0,0.15f,0);
   }
 
   public void OnPointerDown (PointerEventData eventData) {

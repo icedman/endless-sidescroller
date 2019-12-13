@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3456025255128410836}
   m_Layer: 8
   m_Name: Tilemap
-  m_TagString: floor
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -144,7 +144,7 @@ GameObject:
   - component: {fileID: 3456025255917221586}
   - component: {fileID: 3456025255917221587}
   m_Layer: 0
-  m_Name: Grid
+  m_Name: Room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -189,6 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4130619c0cd62e5a5983b9bed2a95821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomIndex: 0
+  index: 0
   tileMap: {fileID: 0}
   playerPosition: {x: 0, y: 0}
+  enemyPrefab: {fileID: 0}

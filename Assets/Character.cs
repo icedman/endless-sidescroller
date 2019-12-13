@@ -16,8 +16,8 @@ public class Character : MonoBehaviour {
   public Rigidbody2D feet;
   public float speedX = 1;
   public bool lockDirection = false;
+  public int direction = 1;
 
-  int direction = 1;
   float animIndex = 0;
 
   public virtual void Init() {}
@@ -59,13 +59,13 @@ public class Character : MonoBehaviour {
   }
 
   void OnTriggerEnter2D (Collider2D collider) {
-    if (collider.tag == "floor") {
+    if (collider.tag == "Ground") {
       grounded();
     }
   }
 
   void OnTriggerStay2D (Collider2D collider) {
-    if (collider.tag == "floor") {
+    if (collider.tag == "Ground") {
       grounded();
     }
   }
@@ -84,10 +84,10 @@ public class Character : MonoBehaviour {
           break;
         }
         animIndex -= animationFrames.Length;
-      }
-      index = animationFrames[(int)animIndex];
+      }  
     }
 
+    index = animationFrames[(int)animIndex];
     spr.sprite = spriteSources[index];
 
     // flip image to direction

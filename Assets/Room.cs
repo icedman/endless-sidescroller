@@ -9,14 +9,35 @@ public class Room : MonoBehaviour {
   public Tilemap tileMap;
   public Vector2Int playerPosition;
 
+  public GameObject enemyPrefab;
+
   void Start() {
     tileMap = GetComponentInChildren<Tilemap> ();
   }
 
+  public Vector3 GetTileWorldPosition(int x, int y) {
+    Vector3Int localPlace = (new Vector3Int(x, y, (int)tileMap.transform.position.y));
+    return tileMap.CellToWorld(localPlace);
+  }
+
+  void CleanupUp() {
+    tileMap.ClearAllTiles ();
+
+    foreach (Transform child in transform) {
+      if (child.gameObject.tag == "Enemy") {
+        GameObject.Destroy(child.gameObject);
+      }
+    }
+  }
+
   public void Generate() {
+    Tileset tileSet = Tileset.Instance();
     RoomTemplates templates = RoomTemplates.Instance();
 
-    int floorTileIndex = 3;
+    CleanupUp();
+
+    // int floorTileIndex = (int)Tileset.ObjType.castleCenter_rounded;
+    int floorTileIndex = (int)Tileset.ObjType.box;
 
     int templateIndex = 0;
     if (index != 0) {
@@ -25,8 +46,7 @@ public class Room : MonoBehaviour {
 
     RoomTemplates.Template t = templates.GetRoom(templateIndex);
 
-    tileMap.ClearAllTiles ();
-    Tile[] tileSources = Tileset.Instance().tileSources;
+    Tile[] tileSources = tileSet.tileSources;
 
     for (int y = 0; y < 12; y++) {
       string s = t.lines[11-y]; // inverted
@@ -37,6 +57,13 @@ public class Room : MonoBehaviour {
           tileMap.SetTile(new Vector3Int(x, y,0), tileSources[floorTileIndex]);
           break;
         }
+        case 'E': {
+          GameObject nme = Instantiate(enemyPrefab, GetTileWorldPosition(x, y+1) + new Vector3(0,0.15f,0), Quaternion.identity);
+          nme.transform.SetParent(transform);
+          nme.GetComponent<Enemy>().Randomize();
+          break;
+        }
+
         case 'P': {
           playerPosition = new Vector2Int(x, y);
           break;

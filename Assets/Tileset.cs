@@ -30,15 +30,19 @@ public class Tileset {
     // build tile sources
     tileSources = new Tile[spriteSources.Length];
     int gap = 1;
-    int [][] items = getItemRects();
+    int[][] items = getItemRects();
     for (int i = 0; i < spriteSources.Length; i++) {
       int [] itemRect = items[i];
 
+      if (itemRect == null) {
+        continue;
+      }
+
       spriteSources[i] = Sprite.Create(tilesTexture,
                                        new Rect(itemRect[0] + gap,
-                                           itemRect[1] + gap,
-                                           itemRect[2] - (gap*2),
-                                           itemRect[3] - (gap*2)),
+                                           936 - itemRect[1] - itemRect[3] + gap,
+                                           itemRect[2] - (gap<<1),
+                                           itemRect[3] - (gap<<1)),
                                        Vector2.zero);
 
       tileSources[i] = Tile.CreateInstance<Tile> ();
@@ -265,6 +269,7 @@ public class Tileset {
     items[(int)ObjType.castleLeft] = new int [] {792, 216, 70, 70};
     items[(int)ObjType.castleMid] = new int [] {792, 144, 70, 70};
     items[(int)ObjType.castleRight] = new int [] {792, 72, 70, 70};
+    /*
     items[(int)ObjType.dirt] = new int [] {792, 0, 70, 70};
     items[(int)ObjType.dirtCenter] = new int [] {720, 864, 70, 70};
     items[(int)ObjType.dirtCenter_rounded] = new int [] {720, 792, 70, 70};
@@ -399,6 +404,7 @@ public class Tileset {
     items[(int)ObjType.tochLit2] = new int [] {72, 144, 70, 70};
     items[(int)ObjType.torch] = new int [] {72, 72, 70, 70};
     items[(int)ObjType.window] = new int [] {72, 0, 70, 70};
+    */
     return items;
   }
 

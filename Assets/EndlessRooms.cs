@@ -7,6 +7,8 @@ public class EndlessRooms : MonoBehaviour {
   public Room [] rooms;
   public Player player;
 
+  public GameObject enemyPrefab;
+
   int idx = 0;
 
   void Start() {
@@ -49,6 +51,10 @@ public class EndlessRooms : MonoBehaviour {
     idx = 0;
     foreach(Room room in rooms) {
       room.index = idx++;
+
+      // pass on prefabs
+      room.enemyPrefab = enemyPrefab;
+      
       room.Generate();
     }
 
