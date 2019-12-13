@@ -14,7 +14,7 @@ public class FollowCamera : MonoBehaviour {
   void Start () {
   }
 
-  void FixedUpdate () {
+  void Update () {
     FollowTarget (true);
   }
 

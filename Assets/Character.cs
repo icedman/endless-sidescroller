@@ -71,7 +71,7 @@ public class Character : MonoBehaviour {
   }
 
   // Update is called once per frame
-  void FixedUpdate() {
+  void Update() {
     Act();
 
     if (animationFrames.Length > 0 && animationSpeed != 0) {

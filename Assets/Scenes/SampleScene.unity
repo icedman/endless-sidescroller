@@ -96,6 +96,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
+    m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -178,11 +179,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8204097}
     m_Modifications:
-    - target: {fileID: 3456025255917221585, guid: 9977064e57765f0a28704d068cd42bfe,
-        type: 3}
-      propertyPath: m_Name
-      value: Room
-      objectReference: {fileID: 0}
     - target: {fileID: 3456025255917221584, guid: 9977064e57765f0a28704d068cd42bfe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -237,6 +233,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3456025255917221585, guid: 9977064e57765f0a28704d068cd42bfe,
+        type: 3}
+      propertyPath: m_Name
+      value: Room
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9977064e57765f0a28704d068cd42bfe, type: 3}
@@ -429,6 +430,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -522,9 +524,9 @@ RectTransform:
   m_Father: {fileID: 1451180863}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -875, y: -55}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 172, y: -55}
   m_SizeDelta: {x: 300, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &843563585
@@ -657,11 +659,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8204097}
     m_Modifications:
-    - target: {fileID: 3456025255917221585, guid: 9977064e57765f0a28704d068cd42bfe,
-        type: 3}
-      propertyPath: m_Name
-      value: Room
-      objectReference: {fileID: 0}
     - target: {fileID: 3456025255917221584, guid: 9977064e57765f0a28704d068cd42bfe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -716,6 +713,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3456025255917221585, guid: 9977064e57765f0a28704d068cd42bfe,
+        type: 3}
+      propertyPath: m_Name
+      value: Room
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9977064e57765f0a28704d068cd42bfe, type: 3}
@@ -1213,11 +1215,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8204097}
     m_Modifications:
-    - target: {fileID: 3456025255917221585, guid: 9977064e57765f0a28704d068cd42bfe,
-        type: 3}
-      propertyPath: m_Name
-      value: Room
-      objectReference: {fileID: 0}
     - target: {fileID: 3456025255917221584, guid: 9977064e57765f0a28704d068cd42bfe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1273,6 +1270,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3456025255917221585, guid: 9977064e57765f0a28704d068cd42bfe,
+        type: 3}
+      propertyPath: m_Name
+      value: Room
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9977064e57765f0a28704d068cd42bfe, type: 3}
 --- !u!1001 &1941430758
@@ -1282,11 +1284,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8204097}
     m_Modifications:
-    - target: {fileID: 3456025255917221585, guid: 9977064e57765f0a28704d068cd42bfe,
-        type: 3}
-      propertyPath: m_Name
-      value: Room
-      objectReference: {fileID: 0}
     - target: {fileID: 3456025255917221584, guid: 9977064e57765f0a28704d068cd42bfe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1341,6 +1338,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3456025255917221585, guid: 9977064e57765f0a28704d068cd42bfe,
+        type: 3}
+      propertyPath: m_Name
+      value: Room
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9977064e57765f0a28704d068cd42bfe, type: 3}

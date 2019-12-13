@@ -6,7 +6,7 @@ using UnityEngine.Tilemaps;
 public class Room : MonoBehaviour {
 
   public int index;
-  public Tilemap tileMap;
+  public Tilemap tileMap = null;
   public Vector2Int playerPosition;
 
   public GameObject enemyPrefab;
@@ -16,7 +16,7 @@ public class Room : MonoBehaviour {
   }
 
   public Vector3 GetTileWorldPosition(int x, int y) {
-    Vector3Int localPlace = (new Vector3Int(x, y + 1, (int)tileMap.transform.position.y));
+    Vector3Int localPlace = (new Vector3Int(x, y + 2, (int)tileMap.transform.position.y));
     return tileMap.CellToWorld(localPlace);
   }
 
