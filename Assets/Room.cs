@@ -16,18 +16,35 @@ public class Room : MonoBehaviour {
   }
 
   public Vector3 GetTileWorldPosition(int x, int y) {
-    Vector3Int localPlace = (new Vector3Int(x, y + 2, (int)tileMap.transform.position.y));
+    Vector3Int localPlace = (new Vector3Int(x, y + 1, (int)tileMap.transform.position.y));
     return tileMap.CellToWorld(localPlace);
   }
 
   void CleanupUp() {
-    tileMap.ClearAllTiles ();
+    // unity's tileMap physics has bugs
+    // tileMap.ClearAllTiles ();
 
     foreach (Transform child in transform) {
-      if (child.gameObject.tag == "Enemy") {
+      if (child.gameObject.tag == "Enemy" ||
+        child.gameObject.tag == "Ground") {
         GameObject.Destroy(child.gameObject);
       }
     }
+  }
+
+  void SetTile(int x, int y, Tile t) {
+    // tile collision doesn't work on android ! uggh
+    // tileMap.SetTile(new Vector3Int(x,y,0), t);
+
+    GameObject nme = new GameObject("tile");
+    nme.layer = LayerMask.NameToLayer("GameLayer");
+    nme.transform.SetParent(transform);
+    nme.transform.position = GetTileWorldPosition(x, y-1);
+    SpriteRenderer spr = nme.AddComponent<SpriteRenderer> ();
+    spr.sprite = t.sprite;
+
+    BoxCollider2D bc = nme.AddComponent<BoxCollider2D> ();
+    bc.tag = "Ground";
   }
 
   public void Generate() {
@@ -54,7 +71,7 @@ public class Room : MonoBehaviour {
         char c = s[x];
         switch (c) {
         case '#': {
-          tileMap.SetTile(new Vector3Int(x, y,0), tileSources[floorTileIndex]);
+          SetTile(x, y, tileSources[floorTileIndex]);
           break;
         }
         case 'E': {

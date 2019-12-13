@@ -179,6 +179,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8204097}
     m_Modifications:
+    - target: {fileID: 3456025255128410840, guid: 9977064e57765f0a28704d068cd42bfe,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 3456025255917221584, guid: 9977064e57765f0a28704d068cd42bfe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -659,6 +664,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8204097}
     m_Modifications:
+    - target: {fileID: 3456025255128410840, guid: 9977064e57765f0a28704d068cd42bfe,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 3456025255917221584, guid: 9977064e57765f0a28704d068cd42bfe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -887,6 +897,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5993128285208269536, guid: 26d32154222c81fa0af50b81f6fde7c3,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 5993128285208269538, guid: 26d32154222c81fa0af50b81f6fde7c3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -946,6 +961,16 @@ PrefabInstance:
         type: 3}
       propertyPath: source
       value: characters/player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5993128285208269564, guid: 26d32154222c81fa0af50b81f6fde7c3,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5993128285208269564, guid: 26d32154222c81fa0af50b81f6fde7c3,
+        type: 3}
+      propertyPath: m_SleepingMode
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26d32154222c81fa0af50b81f6fde7c3, type: 3}
@@ -1215,6 +1240,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8204097}
     m_Modifications:
+    - target: {fileID: 3456025255128410840, guid: 9977064e57765f0a28704d068cd42bfe,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 3456025255917221584, guid: 9977064e57765f0a28704d068cd42bfe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1343,6 +1373,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Room
+      objectReference: {fileID: 0}
+    - target: {fileID: 3456025255917221585, guid: 9977064e57765f0a28704d068cd42bfe,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9977064e57765f0a28704d068cd42bfe, type: 3}

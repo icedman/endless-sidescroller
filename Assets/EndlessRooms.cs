@@ -53,7 +53,7 @@ public class EndlessRooms : MonoBehaviour {
 
       // pass on prefabs
       room.enemyPrefab = enemyPrefab;
-      
+      room.transform.position = Vector3.zero;
       room.Generate();
     }
 

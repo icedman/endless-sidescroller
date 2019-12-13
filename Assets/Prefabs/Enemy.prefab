@@ -22,6 +22,7 @@ MonoBehaviour:
   speedX: 1
   lockDirection: 0
   direction: 1
+  isDead: 0
   player: {fileID: 0}
 --- !u!1001 &1851774751669426394
 PrefabInstance:
@@ -94,6 +95,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5993128285208269564, guid: 26d32154222c81fa0af50b81f6fde7c3,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5993128285208269539, guid: 26d32154222c81fa0af50b81f6fde7c3, type: 3}

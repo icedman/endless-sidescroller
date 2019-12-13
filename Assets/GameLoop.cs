@@ -22,6 +22,8 @@ public class GameLoop : MonoBehaviour,
   EndlessRooms endless;
   GameObject touchBackground;
 
+  bool firstStart = false;
+
   // Start is called before the first frame update
   void Start() {
     tryAgain = GameObject.Find("TryAgain");
@@ -38,7 +40,8 @@ public class GameLoop : MonoBehaviour,
     Tileset.Instance().LoadResources();
     RoomTemplates.Instance().LoadResources();
 
-    StartGame();
+    // StartGame();
+    tryAgain.SetActive(false);
   }
 
   // Update is called once per frame
@@ -50,10 +53,10 @@ public class GameLoop : MonoBehaviour,
     v.y = player.transform.position.y;
     touchBackground.transform.position = v;
 
-    // if (player.speedX != 0) {
+    if (player.speedX != 0) {
       score += (dt * 10);
       scoreText.text = "Score:" + (int)score;
-    // }
+    }
 
     if (player.isDead) {
       if (score > highScore) {
@@ -80,6 +83,11 @@ public class GameLoop : MonoBehaviour,
   }
 
   public void OnPointerDown (PointerEventData eventData) {
+    if (!firstStart) {
+      firstStart = true;
+      StartGame();
+      return;
+    }
     if (player.speedX == 0) {
       player.Run();
       return;
