@@ -67,7 +67,5 @@ public class Player : Character {
 
     // remove any rotations
     body.rotation = 0;
-
-    Debug.Log(index);
   }
 }

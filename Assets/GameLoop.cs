@@ -9,11 +9,17 @@ public class GameLoop : MonoBehaviour,
   IBeginDragHandler,
   IDragHandler,
   IEndDragHandler {
-  Player player;
 
+  Player player;
+  Room room;
+  
   // Start is called before the first frame update
   void Start() {
     player = GetComponentInChildren<Player> ();
+    room = GetComponentInChildren<Room> ();
+
+    Tileset.Instance().LoadResources();
+    room.GenerateRoom();
   }
 
   // Update is called once per frame

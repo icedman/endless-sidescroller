@@ -1,0 +1,346 @@
+items[box] = new int [] {0, 864, 70, 70};
+items[boxAlt] = new int [] {0, 792, 70, 70};
+items[boxCoin] = new int [] {0, 720, 70, 70};
+items[boxCoinAlt] = new int [] {0, 576, 70, 70};
+items[boxCoinAlt_disabled] = new int [] {0, 504, 70, 70};
+items[boxCoin_disabled] = new int [] {0, 648, 70, 70};
+items[boxEmpty] = new int [] {0, 432, 70, 70};
+items[boxExplosive] = new int [] {0, 360, 70, 70};
+items[boxExplosiveAlt] = new int [] {0, 216, 70, 70};
+items[boxExplosive_disabled] = new int [] {0, 288, 70, 70};
+items[boxItem] = new int [] {0, 144, 70, 70};
+items[boxItemAlt] = new int [] {0, 0, 70, 70};
+items[boxItemAlt_disabled] = new int [] {432, 432, 70, 70};
+items[boxItem_disabled] = new int [] {0, 72, 70, 70};
+items[boxWarning] = new int [] {72, 648, 70, 70};
+items[brickWall] = new int [] {216, 0, 70, 70};
+items[bridge] = new int [] {216, 72, 70, 70};
+items[bridgeLogs] = new int [] {288, 720, 70, 70};
+items[castle] = new int [] {288, 792, 70, 70};
+items[castleCenter] = new int [] {504, 288, 70, 70};
+items[castleCenter_rounded] = new int [] {504, 720, 70, 70};
+items[castleCliffLeft] = new int [] {504, 792, 70, 70};
+items[castleCliffLeftAlt] = new int [] {648, 720, 70, 70};
+items[castleCliffRight] = new int [] {648, 792, 70, 70};
+items[castleCliffRightAlt] = new int [] {792, 288, 70, 70};
+items[castleHalf] = new int [] {792, 360, 70, 70};
+items[castleHalfLeft] = new int [] {432, 720, 70, 70};
+items[castleHalfMid] = new int [] {648, 648, 70, 70};
+items[castleHalfRight] = new int [] {792, 648, 70, 70};
+items[castleHillLeft] = new int [] {648, 576, 70, 70};
+items[castleHillLeft2] = new int [] {792, 576, 70, 70};
+items[castleHillRight] = new int [] {792, 504, 70, 70};
+items[castleHillRight2] = new int [] {792, 432, 70, 70};
+items[castleLedgeLeft] = new int [] {856, 868, 5, 22};
+items[castleLedgeRight] = new int [] {842, 868, 5, 22};
+items[castleLeft] = new int [] {792, 216, 70, 70};
+items[castleMid] = new int [] {792, 144, 70, 70};
+items[castleRight] = new int [] {792, 72, 70, 70};
+items[dirt] = new int [] {792, 0, 70, 70};
+items[dirtCenter] = new int [] {720, 864, 70, 70};
+items[dirtCenter_rounded] = new int [] {720, 792, 70, 70};
+items[dirtCliffLeft] = new int [] {720, 720, 70, 70};
+items[dirtCliffLeftAlt] = new int [] {720, 648, 70, 70};
+items[dirtCliffRight] = new int [] {720, 576, 70, 70};
+items[dirtCliffRightAlt] = new int [] {720, 504, 70, 70};
+items[dirtHalf] = new int [] {720, 432, 70, 70};
+items[dirtHalfLeft] = new int [] {720, 360, 70, 70};
+items[dirtHalfMid] = new int [] {720, 288, 70, 70};
+items[dirtHalfRight] = new int [] {720, 216, 70, 70};
+items[dirtHillLeft] = new int [] {720, 144, 70, 70};
+items[dirtHillLeft2] = new int [] {720, 72, 70, 70};
+items[dirtHillRight] = new int [] {720, 0, 70, 70};
+items[dirtHillRight2] = new int [] {648, 864, 70, 70};
+items[dirtLedgeLeft] = new int [] {842, 892, 5, 18};
+items[dirtLedgeRight] = new int [] {842, 912, 5, 18};
+items[dirtLeft] = new int [] {504, 432, 70, 70};
+items[dirtMid] = new int [] {504, 360, 70, 70};
+items[dirtRight] = new int [] {648, 504, 70, 70};
+items[door_closedMid] = new int [] {648, 432, 70, 70};
+items[door_closedTop] = new int [] {648, 360, 70, 70};
+items[door_openMid] = new int [] {648, 288, 70, 70};
+items[door_openTop] = new int [] {648, 216, 70, 70};
+items[fence] = new int [] {648, 144, 70, 70};
+items[fenceBroken] = new int [] {648, 72, 70, 70};
+items[grass] = new int [] {648, 0, 70, 70};
+items[grassCenter] = new int [] {576, 864, 70, 70};
+items[grassCenter_rounded] = new int [] {576, 792, 70, 70};
+items[grassCliffLeft] = new int [] {576, 720, 70, 70};
+items[grassCliffLeftAlt] = new int [] {576, 648, 70, 70};
+items[grassCliffRight] = new int [] {576, 576, 70, 70};
+items[grassCliffRightAlt] = new int [] {576, 504, 70, 70};
+items[grassHalf] = new int [] {576, 432, 70, 70};
+items[grassHalfLeft] = new int [] {576, 360, 70, 70};
+items[grassHalfMid] = new int [] {576, 288, 70, 70};
+items[grassHalfRight] = new int [] {576, 216, 70, 70};
+items[grassHillLeft] = new int [] {576, 144, 70, 70};
+items[grassHillLeft2] = new int [] {576, 72, 70, 70};
+items[grassHillRight] = new int [] {576, 0, 70, 70};
+items[grassHillRight2] = new int [] {504, 864, 70, 70};
+items[grassLedgeLeft] = new int [] {849, 868, 5, 24};
+items[grassLedgeRight] = new int [] {849, 894, 5, 24};
+items[grassLeft] = new int [] {504, 648, 70, 70};
+items[grassMid] = new int [] {504, 576, 70, 70};
+items[grassRight] = new int [] {504, 504, 70, 70};
+items[hill_large] = new int [] {842, 720, 48, 146};
+items[hill_largeAlt] = new int [] {864, 0, 48, 146};
+items[hill_small] = new int [] {792, 828, 48, 106};
+items[hill_smallAlt] = new int [] {792, 720, 48, 106};
+items[ladder_mid] = new int [] {504, 144, 70, 70};
+items[ladder_top] = new int [] {504, 72, 70, 70};
+items[liquidLava] = new int [] {504, 0, 70, 70};
+items[liquidLavaTop] = new int [] {432, 864, 70, 70};
+items[liquidLavaTop_mid] = new int [] {432, 792, 70, 70};
+items[liquidWater] = new int [] {504, 216, 70, 70};
+items[liquidWaterTop] = new int [] {432, 648, 70, 70};
+items[liquidWaterTop_mid] = new int [] {432, 576, 70, 70};
+items[lock_blue] = new int [] {432, 504, 70, 70};
+items[lock_green] = new int [] {72, 576, 70, 70};
+items[lock_red] = new int [] {432, 360, 70, 70};
+items[lock_yellow] = new int [] {432, 288, 70, 70};
+items[rockHillLeft] = new int [] {432, 216, 70, 70};
+items[rockHillRight] = new int [] {432, 144, 70, 70};
+items[ropeAttached] = new int [] {432, 72, 70, 70};
+items[ropeHorizontal] = new int [] {432, 0, 70, 70};
+items[ropeVertical] = new int [] {360, 864, 70, 70};
+items[sand] = new int [] {360, 792, 70, 70};
+items[sandCenter] = new int [] {576, 864, 70, 70};
+items[sandCenter_rounded] = new int [] {576, 792, 70, 70};
+items[sandCliffLeft] = new int [] {360, 720, 70, 70};
+items[sandCliffLeftAlt] = new int [] {360, 648, 70, 70};
+items[sandCliffRight] = new int [] {360, 576, 70, 70};
+items[sandCliffRightAlt] = new int [] {360, 504, 70, 70};
+items[sandHalf] = new int [] {360, 432, 70, 70};
+items[sandHalfLeft] = new int [] {360, 360, 70, 70};
+items[sandHalfMid] = new int [] {360, 288, 70, 70};
+items[sandHalfRight] = new int [] {360, 216, 70, 70};
+items[sandHillLeft] = new int [] {360, 144, 70, 70};
+items[sandHillLeft2] = new int [] {360, 72, 70, 70};
+items[sandHillRight] = new int [] {360, 0, 70, 70};
+items[sandHillRight2] = new int [] {288, 864, 70, 70};
+items[sandLedgeLeft] = new int [] {856, 892, 5, 18};
+items[sandLedgeRight] = new int [] {856, 912, 5, 18};
+items[sandLeft] = new int [] {288, 648, 70, 70};
+items[sandMid] = new int [] {288, 576, 70, 70};
+items[sandRight] = new int [] {288, 504, 70, 70};
+items[sign] = new int [] {288, 432, 70, 70};
+items[signExit] = new int [] {288, 360, 70, 70};
+items[signLeft] = new int [] {288, 288, 70, 70};
+items[signRight] = new int [] {288, 216, 70, 70};
+items[snow] = new int [] {288, 144, 70, 70};
+items[snowCenter] = new int [] {720, 864, 70, 70};
+items[snowCenter_rounded] = new int [] {288, 72, 70, 70};
+items[snowCliffLeft] = new int [] {288, 0, 70, 70};
+items[snowCliffLeftAlt] = new int [] {216, 864, 70, 70};
+items[snowCliffRight] = new int [] {216, 792, 70, 70};
+items[snowCliffRightAlt] = new int [] {216, 720, 70, 70};
+items[snowHalf] = new int [] {216, 648, 70, 70};
+items[snowHalfLeft] = new int [] {216, 576, 70, 70};
+items[snowHalfMid] = new int [] {216, 504, 70, 70};
+items[snowHalfRight] = new int [] {216, 432, 70, 70};
+items[snowHillLeft] = new int [] {216, 360, 70, 70};
+items[snowHillLeft2] = new int [] {216, 288, 70, 70};
+items[snowHillRight] = new int [] {216, 216, 70, 70};
+items[snowHillRight2] = new int [] {216, 144, 70, 70};
+items[snowLedgeLeft] = new int [] {863, 868, 5, 18};
+items[snowLedgeRight] = new int [] {863, 888, 5, 18};
+items[snowLeft] = new int [] {144, 864, 70, 70};
+items[snowMid] = new int [] {144, 792, 70, 70};
+items[snowRight] = new int [] {144, 720, 70, 70};
+items[stone] = new int [] {144, 648, 70, 70};
+items[stoneCenter] = new int [] {144, 576, 70, 70};
+items[stoneCenter_rounded] = new int [] {144, 504, 70, 70};
+items[stoneCliffLeft] = new int [] {144, 432, 70, 70};
+items[stoneCliffLeftAlt] = new int [] {144, 360, 70, 70};
+items[stoneCliffRight] = new int [] {144, 288, 70, 70};
+items[stoneCliffRightAlt] = new int [] {144, 216, 70, 70};
+items[stoneHalf] = new int [] {144, 144, 70, 70};
+items[stoneHalfLeft] = new int [] {144, 72, 70, 70};
+items[stoneHalfMid] = new int [] {144, 0, 70, 70};
+items[stoneHalfRight] = new int [] {72, 864, 70, 70};
+items[stoneHillLeft2] = new int [] {72, 792, 70, 70};
+items[stoneHillRight2] = new int [] {72, 720, 70, 70};
+items[stoneLedgeLeft] = new int [] {863, 908, 5, 24};
+items[stoneLedgeRight] = new int [] {864, 148, 5, 24};
+items[stoneLeft] = new int [] {72, 504, 70, 70};
+items[stoneMid] = new int [] {72, 432, 70, 70};
+items[stoneRight] = new int [] {72, 360, 70, 70};
+items[stoneWall] = new int [] {72, 288, 70, 70};
+items[tochLit] = new int [] {72, 216, 70, 70};
+items[tochLit2] = new int [] {72, 144, 70, 70};
+items[torch] = new int [] {72, 72, 70, 70};
+items[window] = new int [] {72, 0, 70, 70};
+unknown,
+box,
+boxAlt,
+boxCoin,
+boxCoinAlt,
+boxCoinAlt_disabled,
+boxCoin_disabled,
+boxEmpty,
+boxExplosive,
+boxExplosiveAlt,
+boxExplosive_disabled,
+boxItem,
+boxItemAlt,
+boxItemAlt_disabled,
+boxItem_disabled,
+boxWarning,
+brickWall,
+bridge,
+bridgeLogs,
+castle,
+castleCenter,
+castleCenter_rounded,
+castleCliffLeft,
+castleCliffLeftAlt,
+castleCliffRight,
+castleCliffRightAlt,
+castleHalf,
+castleHalfLeft,
+castleHalfMid,
+castleHalfRight,
+castleHillLeft,
+castleHillLeft2,
+castleHillRight,
+castleHillRight2,
+castleLedgeLeft,
+castleLedgeRight,
+castleLeft,
+castleMid,
+castleRight,
+dirt,
+dirtCenter,
+dirtCenter_rounded,
+dirtCliffLeft,
+dirtCliffLeftAlt,
+dirtCliffRight,
+dirtCliffRightAlt,
+dirtHalf,
+dirtHalfLeft,
+dirtHalfMid,
+dirtHalfRight,
+dirtHillLeft,
+dirtHillLeft2,
+dirtHillRight,
+dirtHillRight2,
+dirtLedgeLeft,
+dirtLedgeRight,
+dirtLeft,
+dirtMid,
+dirtRight,
+door_closedMid,
+door_closedTop,
+door_openMid,
+door_openTop,
+fence,
+fenceBroken,
+grass,
+grassCenter,
+grassCenter_rounded,
+grassCliffLeft,
+grassCliffLeftAlt,
+grassCliffRight,
+grassCliffRightAlt,
+grassHalf,
+grassHalfLeft,
+grassHalfMid,
+grassHalfRight,
+grassHillLeft,
+grassHillLeft2,
+grassHillRight,
+grassHillRight2,
+grassLedgeLeft,
+grassLedgeRight,
+grassLeft,
+grassMid,
+grassRight,
+hill_large,
+hill_largeAlt,
+hill_small,
+hill_smallAlt,
+ladder_mid,
+ladder_top,
+liquidLava,
+liquidLavaTop,
+liquidLavaTop_mid,
+liquidWater,
+liquidWaterTop,
+liquidWaterTop_mid,
+lock_blue,
+lock_green,
+lock_red,
+lock_yellow,
+rockHillLeft,
+rockHillRight,
+ropeAttached,
+ropeHorizontal,
+ropeVertical,
+sand,
+sandCenter,
+sandCenter_rounded,
+sandCliffLeft,
+sandCliffLeftAlt,
+sandCliffRight,
+sandCliffRightAlt,
+sandHalf,
+sandHalfLeft,
+sandHalfMid,
+sandHalfRight,
+sandHillLeft,
+sandHillLeft2,
+sandHillRight,
+sandHillRight2,
+sandLedgeLeft,
+sandLedgeRight,
+sandLeft,
+sandMid,
+sandRight,
+sign,
+signExit,
+signLeft,
+signRight,
+snow,
+snowCenter,
+snowCenter_rounded,
+snowCliffLeft,
+snowCliffLeftAlt,
+snowCliffRight,
+snowCliffRightAlt,
+snowHalf,
+snowHalfLeft,
+snowHalfMid,
+snowHalfRight,
+snowHillLeft,
+snowHillLeft2,
+snowHillRight,
+snowHillRight2,
+snowLedgeLeft,
+snowLedgeRight,
+snowLeft,
+snowMid,
+snowRight,
+stone,
+stoneCenter,
+stoneCenter_rounded,
+stoneCliffLeft,
+stoneCliffLeftAlt,
+stoneCliffRight,
+stoneCliffRightAlt,
+stoneHalf,
+stoneHalfLeft,
+stoneHalfMid,
+stoneHalfRight,
+stoneHillLeft2,
+stoneHillRight2,
+stoneLedgeLeft,
+stoneLedgeRight,
+stoneLeft,
+stoneMid,
+stoneRight,
+stoneWall,
+tochLit,
+tochLit2,
+torch,
+window,
+173
