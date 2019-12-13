@@ -8,25 +8,27 @@ public class Character : MonoBehaviour {
 
   public string source;
   public int index = 0;
-  public int [] animation;
+  public int [] animationFrames;
   public float animationSpeed;
   public bool animationLoop;
 
   public Rigidbody2D body;
   public Rigidbody2D feet;
   public float speedX = 1;
+  public bool lockDirection = false;
 
+  int direction = 1;
   float animIndex = 0;
 
-  public virtual void init() {}
-  public virtual void act() {}
+  public virtual void Init() {}
+  public virtual void Act() {}
 
   // Start is called before the first frame update
   void Start() {
     body = GetComponent<Rigidbody2D> ();
     feet = GetComponentInChildren<Rigidbody2D> ();
 
-    init();
+    Init();
 
     spr = GetComponent<SpriteRenderer>();
     if (!spr) {
@@ -43,7 +45,7 @@ public class Character : MonoBehaviour {
   public void SetAnimation(int [] anim, float speed, bool loop) {
     index = anim[0];
     animIndex = 0;
-    animation = anim;
+    animationFrames = anim;
     animationSpeed = speed;
     animationLoop = loop;
 
@@ -70,31 +72,32 @@ public class Character : MonoBehaviour {
 
   // Update is called once per frame
   void FixedUpdate() {
-    act();
+    Act();
 
-    if (animation.Length > 0 && animationSpeed != 0) {
+    if (animationFrames.Length > 0 && animationSpeed != 0) {
       float dt = Time.deltaTime;
       animIndex += dt * animationSpeed;
-      while (animIndex >= animation.Length) {
+      while (animIndex >= animationFrames.Length) {
         if (!animationLoop) {
           animationSpeed = 0;
-          animIndex = animation.Length - 1;
+          animIndex = animationFrames.Length - 1;
           break;
         }
-        animIndex -= animation.Length;
+        animIndex -= animationFrames.Length;
       }
-      index = animation[(int)animIndex];
+      index = animationFrames[(int)animIndex];
     }
 
     spr.sprite = spriteSources[index];
 
     // flip image to direction
-    Vector2 s = transform.localScale;
-    if (body.velocity.x < 0) {
-      s.x = -1;
-    } else {
-      s.x = 1;
+    if (!lockDirection && body.velocity.x < 0) {
+      direction = -1;
+    } else if (body.velocity.x > 0) {
+      direction = 1;
     }
+    Vector2 s = transform.localScale;
+    s.x = direction;
     transform.localScale = s;
   }
 }

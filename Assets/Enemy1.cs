@@ -6,14 +6,14 @@ using UnityEngine;
 public class Enemy1 : Player
 {
   override
-  public void init() {
-    base.init();
+  public void Init() {
+    base.Init();
     source = "characters/caveman";
-    run();
+    Run();
   }
 
   override
-  public void act() {
+  public void Act() {
     float dt = Time.deltaTime;
   }
 }

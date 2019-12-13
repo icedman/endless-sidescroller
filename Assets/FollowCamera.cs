@@ -9,7 +9,7 @@ public class FollowCamera : MonoBehaviour {
   public Transform target = null;
 
   Player player = null;
-  Camera camera = null;
+  Camera targetCamera = null;
 
   void Start () {
   }
@@ -25,8 +25,8 @@ public class FollowCamera : MonoBehaviour {
     if (!player) {
       player = (target.gameObject.GetComponent<Player> ());
     }
-    if (!camera) {
-      camera = GetComponent<Camera> ();
+    if (!targetCamera) {
+      targetCamera = GetComponent<Camera> ();
     }
 
     float dt = dampTime;
@@ -34,9 +34,11 @@ public class FollowCamera : MonoBehaviour {
       dt = 0;
     }
 
-    Vector3 point = camera.WorldToViewportPoint (player.transform.position);
-    Vector3 delta = player.transform.position - camera.ViewportToWorldPoint (new Vector3 (0.5f, 0.5f, point.z)); //(new Vector3(0.5, 0.5, point.z));
+    Vector3 point = targetCamera.WorldToViewportPoint (player.transform.position);
+    Vector3 delta = player.transform.position - targetCamera.ViewportToWorldPoint (new Vector3 (0.5f, 0.5f, point.z)); //(new Vector3(0.5, 0.5, point.z));
     Vector3 destination = transform.position + delta;
+
+    destination += new Vector3((Screen.width * 0.001f), 0, 0);
 
     destination.z = -24;
     transform.position = Vector3.SmoothDamp (transform.position, destination, ref velocity, dt);

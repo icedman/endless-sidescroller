@@ -13,34 +13,52 @@ public class Player : Character {
   int zeroY = 0;
 
   override
-  public void init() {
-    base.init();
+  public void Init() {
+    base.Init();
     source = "characters/player";
-    run();
+    Stand();
+
+    PhysicsMaterial2D mat = new PhysicsMaterial2D();
+    mat.friction = 0.1f;
+    mat.bounciness = 0.25f;
+    body.sharedMaterial = mat;
+    body.angularDrag = 0.0f;
+
+    lockDirection = true;
   }
 
-  public void stand() {
+  public void Stand() {
     SetAnimation(_stand, 0, false);
   }
 
-  public void walk() {
+  public void Walk() {
     SetAnimation(_walk, 10, true);
   }
 
-  public void run() {
+  public void Run() {
+    speedX = 4.0f;
     SetAnimation(_walk, 15, true);
   }
 
-  public void jump() {
+  public void Jump() {
     if (!jumping && body.velocity.y == 0) {
+      zeroY = 0;
       jumping = true;
       body.AddForce (transform.up * 300);
       SetAnimation(_jump, 5, false);
     }
   }
 
+  public void EndJump() {
+    if (jumping) {
+      Vector2 v = body.velocity;
+      v.y = v.y * 0.6f;
+      body.velocity = v;
+    }
+  }
+
   override
-  public void act() {
+  public void Act() {
     float dt = Time.deltaTime;
 
     // jumping
@@ -48,20 +66,20 @@ public class Player : Character {
       zeroY++;
       if (zeroY > 4) {
         jumping = false;
-        run();
+        Run();
       }
     } else {
       zeroY = 0;
     }
 
     // falling
-    if (body.velocity.y < 0) {
-      jumping = true;
+    if (body.velocity.y < 0 && jumping) {
       SetAnimation(_fall, 5, false);
     }
 
     // move forward
     Vector2 v = body.velocity;
+    if (v.y == 0)
     v.x = speedX;
     body.velocity = v;
 

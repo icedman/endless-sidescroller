@@ -15,7 +15,7 @@ public class Tileset {
   }
 
   public Sprite[] spriteSources;
-  public UnityEngine.Tilemaps.Tile[] tileSources;
+  public Tile[] tileSources;
 
   public void LoadResources () {
     if (spriteSources != null) {
@@ -23,25 +23,25 @@ public class Tileset {
     }
 
     // load texture
-    // Sprite spr = Resources.Load<Sprite> ("tiles/tiles_spritesheet");
-    Texture2D tex = Resources.Load<Texture2D>("tiles/tiles_spritesheet");
+    Texture2D tilesTexture = Resources.Load<Texture2D>("tiles/tiles_spritesheet");
 
     spriteSources = new Sprite[(int)ObjType.last];
 
-    tileSources = new UnityEngine.Tilemaps.Tile[spriteSources.Length];
+    // build tile sources
+    tileSources = new Tile[spriteSources.Length];
     int gap = 1;
     int [][] items = getItemRects();
     for (int i = 0; i < spriteSources.Length; i++) {
       int [] itemRect = items[i];
 
-      spriteSources[i] = Sprite.Create(tex,
+      spriteSources[i] = Sprite.Create(tilesTexture,
                                        new Rect(itemRect[0] + gap,
                                            itemRect[1] + gap,
                                            itemRect[2] - (gap*2),
                                            itemRect[3] - (gap*2)),
                                        Vector2.zero);
 
-      tileSources[i] = UnityEngine.Tilemaps.Tile.CreateInstance<UnityEngine.Tilemaps.Tile> ();
+      tileSources[i] = Tile.CreateInstance<Tile> ();
       tileSources[i].sprite = spriteSources[i];
     }
   }

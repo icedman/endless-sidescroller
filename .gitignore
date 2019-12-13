@@ -9,6 +9,9 @@ Temp/
 *.csproj
 *.userprefs
 
+*.orig
+*.orig.*
+
 .DS_Store
 .DS_Store?
 ._*
