@@ -92,6 +92,8 @@ public class Player : Character {
       return;
     }
 
+    SoundEffects.Instance().PlayEffect(SoundEffects.Effects.die);
+
     isDead = true;
     speedX = 0;
     body.AddForce (transform.up * 20);

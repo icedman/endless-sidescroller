@@ -23,7 +23,6 @@ public class EndlessRooms : MonoBehaviour {
       // distance
       float d = Vector3.Distance(player.transform.position, room.transform.position);
       if (d > 30) {
-        Debug.Log(idx);
         room.index = idx++;
         MoveRoomToBack(room, FindAdjacentRoom(room));
         room.Generate();

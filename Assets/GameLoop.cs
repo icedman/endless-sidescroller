@@ -75,6 +75,11 @@ public class GameLoop : MonoBehaviour,
     Room room = endless.rooms[0];
     player.Reset();
     player.transform.position = room.GetTileWorldPosition(room.playerPosition.x, room.playerPosition.y+1) + new Vector3(0,0.15f,0);
+
+    // reposition camera
+    GameObject.Find("Main Camera").GetComponent<FollowCamera>().FollowTarget(false);
+
+    FixedUpdate();
   }
 
   public void OnPointerDown (PointerEventData eventData) {
